@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routers import products
+from app.routers import products, users
 
 app = FastAPI()
 
@@ -15,3 +15,4 @@ async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
 app.include_router(products.router)
+app.include_router(users.router)
