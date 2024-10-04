@@ -1,12 +1,20 @@
+
 from pydantic import EmailStr, BaseModel, constr, SecretStr, validator
 
 
 class InfoProduct(BaseModel):
+=======
+from pydantic import BaseModel
+
+
+class CreateProduct(BaseModel):
+
     name: str
     description: str
     price: int
     image_url: str
     stock: int
+
 
 class InfoUser(BaseModel):
     first_name: str
@@ -26,3 +34,5 @@ class InfoUser(BaseModel):
         if len(v) < 4:
             raise ValueError('Пароль должен содержать минимум 4 символа')
         return v
+=======
+
